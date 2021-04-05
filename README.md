@@ -15,10 +15,12 @@ Data: LoanStats_2019Q1.csv (located in the Resources folder of this repository)
 ![naive_oversampling.PNG](Resources/naive_oversampling.PNG)
 
 
+The naive random oversampling method resulted in a balanced accuracy score of 0.60, an average precision score of 0.99, and an average recall score of 0.71. 
 
+* **SMOTE Oversampling**
+![smote_oversampling.PNG](Resources/smote_oversampling.PNG)
 
-
-
+The SMOTE oversampling method resulted in a balanced accuracy score of 0.62, an average precision score of 0.99, and an average recall score of 0.71. 
 
 
 ## Summary
