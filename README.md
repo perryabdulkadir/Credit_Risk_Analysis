@@ -33,9 +33,17 @@ The Clustered Centroids undersampling method resulted in a balanced accuracy sco
 The SMOTEENN combination sampling method resulted in a balanced accuracy score of 0.65, an average precision score of 0.99, and an average recall score of 0.56. 
 
 * **Balanced Random Forest Classifier**
-![balanced_random_forest.PNG.PNG](Resources/balanced_random_forest.PNG)
+![balanced_random_forest.PNG](Resources/balanced_random_forest.PNG)
 
 The balanced random forest classifier method resulted in a balanced accuracy score of 0.96, an average precision score of 1.0, and an average recall score of 0.93. 
+
+* **Easy Ensemble AdaBoost Classifier**
+![easy_ensemble_classifier.PNG](Resources/easy_ensemble_classifier.PNG)
+
+The Easy Ensemble AdaBoost Classifier method resulted in a balanced accuracy score of 0.97, an average precision score of 1.0, and an average recall score of 0.95. 
+
+
+
 
 ## Summary
 
