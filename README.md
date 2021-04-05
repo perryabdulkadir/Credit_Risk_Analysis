@@ -35,25 +35,27 @@ The SMOTEENN combination sampling method resulted in a balanced accuracy score o
 * **Balanced Random Forest Classifier**
 ![balanced_random_forest.PNG](Resources/balanced_random_forest.PNG)
 
-The balanced random forest classifier method resulted in a balanced accuracy score of 0.96, an average precision score of 1.0, and an average recall score of 0.93. 
+The balanced random forest classifier method resulted in a balanced accuracy score of 0.80, an average precision score of 0.99, and an average recall score of 0.92. 
 
 * **Easy Ensemble AdaBoost Classifier**
 ![easy_ensemble_classifier.PNG](Resources/easy_ensemble_classifier.PNG)
 
-The Easy Ensemble AdaBoost Classifier method resulted in a balanced accuracy score of 0.97, an average precision score of 1.0, and an average recall score of 0.95. 
+The Easy Ensemble AdaBoost Classifier method resulted in a balanced accuracy score of 0.91, an average precision score of 0.99, and an average recall score of 0.94. 
 
 
 ## Summary and Recommendation
 
 To begin with, we should clarify which metric is most important between precision and recall. For this use case, recall (sensitivity) is more important than precision. It is a better scenario for the algorithm to flag a good applicant as high risk, only to have a manual review approve them (false positive) than it is to have the algorithm approve a high risk applicant (false negative). 
 
-Ultimately, this distinction proved to not be important because the two highest performing models outperformed the others across all metrics. I recommend two models, each of which may be useful depending on the use case. The Easy Ensemble AdaBoost Classifier had the highest balanced accuracy score (0.97), had a perfect precision score, and had a recall score of 0.95. Therefore, this is the model to use if model performance is the greatest concern. The Balanced Random Forest Classifier performed just a bit worse, with an accuracy score of 0.96, a perfect precision score of 1.0, and an average recall score of 0.93. The benefit of this model, however, is that it is more understandable for humans and it is easy to see which features were most important to the model performance, using the code below. 
+I recommend two models, each of which may be useful depending on the use case. The Easy Ensemble AdaBoost Classifier had the highest balanced accuracy score (0.91), had a precision score of 0.99, and had a recall score of 0.91. Therefore, this is the model to use if overall model performance is the greatest concern. The Balanced Random Forest Classifier performed a bit worse, with an accuracy score of 0.80, a precision score of 0.99, and an average recall score of 0.92. The benefit of this model, however, is that it is more understandable for humans as it is easy to see which features were most important to the model performance, using the code below.
 
 ```
 imp = dict(zip(*[X.columns.tolist(), random_forest.feature_importances_]))
 {k: v for k, v in sorted(imp.items(), key=lambda item: item[1], reverse=True)}
 ```
 
-Both of these models could be valuable in the right situation. However, I would caution that these models should be tried on new datasets. They perform so well that it may be an indication of overfiting; that is, reflect the idiosyncracies of this dataset. 
+Additionally, while the balanced accuracy score is lower than the Easy Ensemble AdaBoost Classifier, its sensitivity is actually just slightly higher. If this is the most important feature for our analysis, then the random forest method has a slight edge. 
+
+Both of these models could be valuable in the right situation. However, I would caution that Easy Ensemble model, in particular, should be tried on new datasets. It performs so well that it may be an indication of overfiting; that is, it reflects the idiosyncracies of this dataset but would not perform well if applied to new data. 
 
 
