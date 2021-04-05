@@ -2,10 +2,10 @@
  Columbia Data Science Module 17
 
 ## Overview
-Working from an anonymized dataset of LendingClub borrowers, I have used several different machine learning algorithms to gauge thecredit risk of borrowers. Credit risk datasets typically contain far more low risk borrowers than high risk borrowers, and this dataset is no exception. Because of this, the key distinction between the six different algorithms are the methods employed in compensating for the relative paucity of high risk borrowers. (After doing some initial data cleaning, there were 347 high risk borrowers and 68,470 non-high risk borrowers. I will compare model performance using naive oversampling, SMOTE oversampling, Clustered_Centroids undersampling, SMOTEENN oversampling/undersampling (combined), balanced random forest, and EasyEnsemble Classifier. 
+Working from an anonymized dataset of LendingClub borrowers, I have used several different machine learning algorithms to gauge thecredit risk of borrowers. Credit risk datasets typically contain far more low risk borrowers than high risk borrowers, and this dataset is no exception. Because of this, the key distinction between the six different algorithms are the methods employed in compensating for the relative paucity of high risk borrowers. (After doing some initial data cleaning, there were 347 high risk borrowers and 68,470 non-high risk borrowers. I will compare model performance using naive oversampling, SMOTE oversampling, Clustered Centroids undersampling, SMOTEENN oversampling/undersampling (combined), balanced random forest, and EasyEnsemble Classifier. 
 
 ## Resources
-Software/tools: Jupyter Notebook, NumPy, Pandas, SKLearn, IMBLearn, 
+Software/tools: Jupyter Notebook, NumPy, Pandas, SKLearn, IMBLearn
 
 Data: LoanStats_2019Q1.csv (located in the Resources folder of this repository)
 
@@ -21,6 +21,11 @@ The naive random oversampling method resulted in a balanced accuracy score of 0.
 ![smote_oversampling.PNG](Resources/smote_oversampling.PNG)
 
 The SMOTE oversampling method resulted in a balanced accuracy score of 0.62, an average precision score of 0.99, and an average recall score of 0.71. 
+
+* **Clustered Centroids Undersampling**
+![clustered_centroids_undersampling.PNG](Resources/clustered_centroids_undersampling.PNG)
+
+The Clustered Centroids undersampling method resulted in a balanced accuracy score of 0.51, an average precision score of 0.99, and an average recall score of 0.47. 
 
 
 ## Summary
