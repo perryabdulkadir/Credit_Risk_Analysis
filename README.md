@@ -56,6 +56,6 @@ imp = dict(zip(*[X.columns.tolist(), random_forest.feature_importances_]))
 
 Additionally, while the balanced accuracy score is lower than the Easy Ensemble AdaBoost Classifier, its sensitivity is actually just slightly higher. If this is the most important feature for our analysis, then the random forest method has a slight edge. 
 
-Both of these models could be valuable in the right situation. However, I would caution that Easy Ensemble model, in particular, should be tried on new datasets. It performs so well that it may be an indication of overfiting; that is, it reflects the idiosyncracies of this dataset but would not perform well if applied to new data. 
+Both of these models could be valuable in the right situation. However, I would caution that Easy Ensemble model, in particular, should be tried on new datasets. It performs so well that it may be an indication of overfitting; that is, it reflects the idiosyncracies of this dataset but would not perform well if applied to new data. 
 
 
