@@ -27,6 +27,11 @@ The SMOTE oversampling method resulted in a balanced accuracy score of 0.62, an 
 
 The Clustered Centroids undersampling method resulted in a balanced accuracy score of 0.51, an average precision score of 0.99, and an average recall score of 0.47. 
 
+* **Combination (Over and Under) Sampling with SMOTEENN**
+![smoteenn_over_and_undersampling.PNG](Resources/smoteenn_over_and_undersampling.PNG)
+
+The SMOTEENN combination sampling method resulted in a balanced accuracy score of 0.65, an average precision score of 0.99, and an average recall score of 0.56. 
+
 
 ## Summary
 
