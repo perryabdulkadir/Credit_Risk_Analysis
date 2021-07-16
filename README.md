@@ -54,10 +54,13 @@ I then dummified categorical variables.
 ```
 df = pd.get_dummies(df, columns=["home_ownership", "verification_status", "initial_list_status", "application_type", "hardship_flag", "debt_settlement_flag", "issue_d", "next_pymnt_d", "loan_status", "pymnt_plan"])
 ```
+I repeated the same process for the ensemble model notebook.
 
 ### Splitting the Data in Training and Testing Data Sets
 I split the data into training and testing sets using the code below. 
 ![splitting.PNG](Resources/splitting.PNG)
+
+I repeated the same process for the ensemble model notebook.
 
 ## Results
 
