@@ -7,7 +7,7 @@ Working from an anonymized dataset of LendingClub borrowers, I have used several
 ## Resources
 Software/tools: Jupyter Notebook, NumPy, Pandas, SKLearn, IMBLearn
 
-Data: LoanStats_2019Q1.csv (located in the Resources folder of this repository)
+[Data:](https://github.com/perryabdulkadir/Credit_Risk_Analysis/blob/main/Resources/LoanStats_2019Q1.csv) LoanStats_2019Q1.csv 
 
 ## Results
 
