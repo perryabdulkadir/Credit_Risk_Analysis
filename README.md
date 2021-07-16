@@ -4,10 +4,60 @@
 ## Overview
 Working from an anonymized dataset of LendingClub borrowers, I have used several different machine learning algorithms to gauge thecredit risk of borrowers. Credit risk datasets typically contain far more low risk borrowers than high risk borrowers, and this dataset is no exception. Because of this, the key distinction between the six different algorithms are the methods employed in compensating for the relative paucity of high risk borrowers. (After doing some initial data cleaning, there were 347 high risk borrowers and 68,470 non-high risk borrowers. I will compare model performance using naive oversampling, SMOTE oversampling, Clustered Centroids undersampling, SMOTEENN oversampling/undersampling (combined), balanced random forest, and EasyEnsemble Classifier. 
 
-## Resources
-Software/tools: Jupyter Notebook, NumPy, Pandas, SKLearn, IMBLearn
+### Resources
+Software/languages: Jupyter Notebook, 
+Python packages: numpy, Pandas, SKLearn, IMBLearn
 
 [Data:](https://github.com/perryabdulkadir/Credit_Risk_Analysis/blob/main/Resources/LoanStats_2019Q1.csv) LoanStats_2019Q1.csv 
+
+
+## Analysis 
+
+### Cleaning the Data
+
+I started by loading in the data, dropping null columns and rows, removing issued loans, converting the interest rate data type, categorizing target column values as either low risk or high risk. 
+
+```
+# Load the data
+file_path = Path('Resources/LoanStats_2019Q1.csv')
+df = pd.read_csv(file_path, skiprows=1)[:-2]
+df = df.loc[:, columns].copy()
+
+# Drop the null columns where all values are null
+df = df.dropna(axis='columns', how='all')
+
+# Drop the null rows
+df = df.dropna()
+
+# Remove the `Issued` loan status
+issued_mask = df['loan_status'] != 'Issued'
+df = df.loc[issued_mask]
+
+# convert interest rate to numerical
+df['int_rate'] = df['int_rate'].str.replace('%', '')
+df['int_rate'] = df['int_rate'].astype('float') / 100
+
+
+# Convert the target column values to low_risk and high_risk based on their values
+x = {'Current': 'low_risk'}   
+df = df.replace(x)
+
+x = dict.fromkeys(['Late (31-120 days)', 'Late (16-30 days)', 'Default', 'In Grace Period'], 'high_risk')    
+df = df.replace(x)
+
+df.reset_index(inplace=True, drop=True)
+
+df.head()
+```
+I then dummified categorical variables. 
+
+```
+df = pd.get_dummies(df, columns=["home_ownership", "verification_status", "initial_list_status", "application_type", "hardship_flag", "debt_settlement_flag", "issue_d", "next_pymnt_d", "loan_status", "pymnt_plan"])
+```
+
+### Splitting the Data in Training and Testing Data Sets
+I split the data into training and testing sets using the code below. 
+![splitting.PNG](Resources/splitting.PNG)
 
 ## Results
 
